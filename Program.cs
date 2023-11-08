@@ -11,43 +11,14 @@ namespace ConsoleApp1
         static void Main(string [] args)
         {
             Goblin goblin = new Goblin(100,10,"Гоблин");
-            BabaYga babaYga = new BabaYga(100,10,"Баба-Яга");
-  
+            WaterMan waterMan = new WaterMan(199, 10, "Водяной");
+
             goblin.ShowInfo();
-            babaYga.ShowInfo();
+            waterMan.ShowInfo();
+
+            waterMan.Attack(goblin);
+
            
-            Console.WriteLine();
-
-            goblin.Attack(babaYga);
-            babaYga.Attack(goblin);
-
-            goblin.ShowInfo();
-            babaYga.ShowInfo();
-
-            Console.WriteLine();
-
-            goblin.Attack(babaYga);
-            babaYga.Attack(goblin);
-
-            goblin.ShowInfo();
-            babaYga.ShowInfo();
-
-            Console.WriteLine();
-
-            goblin.Attack(babaYga);
-            babaYga.Attack(goblin);
-
-            goblin.ShowInfo();
-            babaYga.ShowInfo();
-
-            goblin.Attack(babaYga);
-            babaYga.Attack(goblin);
-
-            Console.WriteLine();
-
-            goblin.ShowInfo();
-            babaYga.ShowInfo();
-
 
             Console.ReadKey();
 
