@@ -19,6 +19,16 @@ namespace ConsoleApp1
             Name = name;
         }
 
+        public int ReturnValueHealth()
+        {
+            return Health;
+        }
+
+        public void SetValueHealth(int healthPower) 
+        {
+            Health += healthPower;
+        }
+
         protected void TakeDamage(Person target)
         {
             target.Health -= Damage;
@@ -29,7 +39,7 @@ namespace ConsoleApp1
             TakeDamage(target);
         }
 
-        public void ShowInfo() 
+        public void ShowInfo()
         {
             Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health}");
         }
