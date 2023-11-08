@@ -12,10 +12,10 @@ namespace ConsoleApp1
         {
             Goblin goblin = new Goblin(100,10,"Гоблин");
             BabaYga babaYga = new BabaYga(100,10,"Баба-Яга");
-
+  
             goblin.ShowInfo();
             babaYga.ShowInfo();
-
+           
             Console.WriteLine();
 
             goblin.Attack(babaYga);

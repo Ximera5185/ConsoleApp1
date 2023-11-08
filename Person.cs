@@ -8,9 +8,9 @@ namespace ConsoleApp1
 {
     internal class Person
     {
-        protected int Health { get; set; }
-        protected int Damage { get; set; }
-        protected string Name { get; set; }
+        protected int Health { get; private set; }
+        protected int Damage { get; private set; }
+        protected string Name { get; private set; }
 
         protected Person(int health, int damage, string name)
         {
