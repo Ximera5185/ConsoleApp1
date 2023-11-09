@@ -19,19 +19,9 @@ namespace ConsoleApp1
             Name = name;
         }
 
-        public int ReturnValueHealth()
+        public void ShowInfo()
         {
-            return Health;
-        }
-
-        public void SetValueHealth(int healthPower) 
-        {
-            Health += healthPower;
-        }
-
-        protected void TakeDamage(Person target)
-        {
-            target.Health -= Damage;
+            Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health}");
         }
 
         public virtual void Attack(Person target)
@@ -39,9 +29,14 @@ namespace ConsoleApp1
             TakeDamage(target);
         }
 
-        public void ShowInfo()
+        protected void SetValueHealth(int healthPower)
         {
-            Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health}");
+            Health += healthPower;
+        }
+
+        protected void TakeDamage(Person target)
+        {
+            target.Health -= Damage;
         }
     }
 }
