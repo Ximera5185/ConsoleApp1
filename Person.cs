@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     internal class Person
     {
-        protected int Health { get; private set; }
+        public int Health { get; protected set; }
         protected int Damage { get; private set; }
         protected string Name { get; private set; }
 
@@ -27,11 +27,6 @@ namespace ConsoleApp1
         public virtual void Attack(Person target)
         {
             TakeDamage(target);
-        }
-
-        protected void SetValueHealth(int healthPower)
-        {
-            Health += healthPower;
         }
 
         protected void TakeDamage(Person target)
