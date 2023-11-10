@@ -8,25 +8,15 @@ namespace ConsoleApp1
         {
             Goblin goblin = new Goblin(100,10,"Гоблин");
             WaterMan waterMan = new WaterMan(200, 10, "Водяной");
+            Koschei koschei = new Koschei(100,10,"Кащей");
 
+            koschei.ShowInfo();
+
+            koschei.Attack(goblin);
             goblin.ShowInfo();
-            waterMan.ShowInfo();
-
-            waterMan.Attack(goblin);
-            goblin.Attack(waterMan);
-
-            goblin.ShowInfo();
-            waterMan.ShowInfo();
-
-            waterMan.Attack(goblin);
-            goblin.Attack(waterMan);
-
-            goblin.ShowInfo();
-            waterMan.ShowInfo();
-
             Console.ReadKey();
 
-            waterMan.
+            
 
         }
     }

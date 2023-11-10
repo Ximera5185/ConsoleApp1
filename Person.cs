@@ -9,7 +9,7 @@ namespace ConsoleApp1
     internal class Person
     {
         public int Health { get; protected set; }
-        protected int Damage { get; private set; }
+        public int Damage { get; protected set; }
         protected string Name { get; private set; }
 
         protected Person(int health, int damage, string name)
@@ -19,7 +19,7 @@ namespace ConsoleApp1
             Name = name;
         }
 
-        public void ShowInfo()
+        public virtual void ShowInfo()
         {
             Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health}");
         }

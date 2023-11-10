@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BabaYga.cs" />
     <Compile Include="Goblin.cs" />
+    <Compile Include="Koschei.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
