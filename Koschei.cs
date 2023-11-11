@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -10,8 +6,7 @@ namespace ConsoleApp1
     {
         private int Mana { get; set; }
 
-        private int _minValueMana = 50;
-        private int _maxValueMana = 100;
+        private readonly int _maxValueMana = 100;
 
         public Koschei(int health, int damage, string name) : base(health, damage, name)
         {
@@ -25,20 +20,19 @@ namespace ConsoleApp1
 
         public override void Attack(Person target)
         {
-            int CostSuperHit = 50;
+            int costManaSuperHit = 50;
 
             int attackBooster = 3;
 
-
             int saveValueDamage = Damage;
 
-            if (Mana >= _minValueMana)
+            if (Mana >= costManaSuperHit)
             {
                 Damage *= attackBooster;
 
                 base.Attack(target);
 
-                Mana -= CostSuperHit;
+                Mana -= costManaSuperHit;
 
                 Damage = saveValueDamage;
 
