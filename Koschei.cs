@@ -4,9 +4,9 @@ namespace ConsoleApp1
 {
     internal class Koschei : Person
     {
-        private int Mana { get; set; }
-
         private readonly int _maxValueMana = 100;
+
+        private int Mana { get; set; }
 
         public Koschei(int health, int damage, string name) : base(health, damage, name)
         {
