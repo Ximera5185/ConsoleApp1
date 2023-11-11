@@ -10,9 +10,12 @@ namespace ConsoleApp1
     {
         private int Mana { get; set; }
 
-        public Koschei(int health,int damage,string name) : base(health, damage, name) 
+        private int _minValueMana = 50;
+        private int _maxValueMana = 100;
+
+        public Koschei(int health, int damage, string name) : base(health, damage, name)
         {
-            Mana = 100;
+            Mana = _maxValueMana;
         }
 
         public override void ShowInfo()
@@ -22,23 +25,38 @@ namespace ConsoleApp1
 
         public override void Attack(Person target)
         {
-            int minValueMana = 0;
+            int CostSuperHit = 50;
+
+            int attackBooster = 3;
+
 
             int saveValueDamage = Damage;
 
-            if (Mana > minValueMana)
+            if (Mana >= _minValueMana)
             {
-                Damage *= 3;
+                Damage *= attackBooster;
 
                 base.Attack(target);
 
-                Mana -= 50;
+                Mana -= CostSuperHit;
 
-                Damage = saveValueDamage;  
+                Damage = saveValueDamage;
+
+                FillMana();
             }
-            else 
+            else
             {
                 base.Attack(target);
+
+                FillMana();
+            }
+        }
+
+        private void FillMana()
+        {
+            if (Mana < 100)
+            {
+                Mana++;
             }
         }
     }

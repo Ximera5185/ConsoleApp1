@@ -11,9 +11,19 @@ namespace ConsoleApp1
             Koschei koschei = new Koschei(100,10,"Кащей");
 
             koschei.ShowInfo();
+            
+            koschei.Attack(goblin);
+            koschei.ShowInfo();
+            goblin.ShowInfo();
 
             koschei.Attack(goblin);
+            koschei.ShowInfo();
             goblin.ShowInfo();
+
+            koschei.Attack(goblin);
+            koschei.ShowInfo();
+            goblin.ShowInfo();
+
             Console.ReadKey();
 
             
