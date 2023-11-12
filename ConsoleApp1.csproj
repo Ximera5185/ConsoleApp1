@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BabaYga.cs" />
+    <Compile Include="Dragon.cs" />
     <Compile Include="Goblin.cs" />
     <Compile Include="Koschei.cs" />
     <Compile Include="Person.cs" />
