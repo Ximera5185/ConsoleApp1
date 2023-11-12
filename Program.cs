@@ -9,20 +9,10 @@ namespace ConsoleApp1
             Goblin goblin = new Goblin(100,10,"Гоблин");
             WaterMan waterMan = new WaterMan(200, 10, "Водяной");
             Koschei koschei = new Koschei(100,10,"Кащей");
+            Dragon dragon = new Dragon(100,10,"Змей-Горыныч");
 
-            koschei.ShowInfo();
-            
-            koschei.Attack(goblin);
-            koschei.ShowInfo();
-            goblin.ShowInfo();
+            goblin.Attack(dragon);
 
-            koschei.Attack(goblin);
-            koschei.ShowInfo();
-            goblin.ShowInfo();
-
-            koschei.Attack(goblin);
-            koschei.ShowInfo();
-            goblin.ShowInfo();
 
             Console.ReadKey();
 

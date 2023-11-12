@@ -29,7 +29,7 @@ namespace ConsoleApp1
             TakeDamage(target);
         }
 
-        protected void TakeDamage(Person target)
+        private void TakeDamage(Person target)
         {
             target.Health -= Damage;
         }
