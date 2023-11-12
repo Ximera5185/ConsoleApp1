@@ -12,7 +12,7 @@ namespace ConsoleApp1
             Dragon dragon = new Dragon(100,10,"Змей-Горыныч");
 
             goblin.Attack(dragon);
-
+           
 
             Console.ReadKey();
 

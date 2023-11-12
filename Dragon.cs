@@ -14,14 +14,14 @@ namespace ConsoleApp1
         
         }
 
-        /*protected override void TakeDamage(Person target)
+        public override void TakeDamage(int damage)
         {
             Random random = new Random();
 
             int minValue = 1;
             int maxValue = 101;
 
-            bool isRetreatAttack = random.Next(minValue,maxValue) <= 30;
+            bool isRetreatAttack = random.Next(minValue, maxValue) <= 30;
 
             if (isRetreatAttack)
             {
@@ -29,10 +29,10 @@ namespace ConsoleApp1
             }
             else
             {
-                  base.TakeDamage(target);
+                base.TakeDamage(damage);
 
                 Console.WriteLine("Змей горыныч получил урон");
             }
-        }*/
+        }
     }
 }

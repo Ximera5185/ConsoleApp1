@@ -8,16 +8,16 @@ namespace ConsoleApp1
 {
     internal class Person
     {
-        protected int Health { get; set; }
-        protected int Damage { get; set; }
-        protected string Name { get; set; }
-
         protected Person(int health, int damage, string name)
         {
             Health = health;
             Damage = damage;
             Name = name;
         }
+
+        public int Health { get; protected set; }
+        protected int Damage { get; set; }
+        protected string Name { get; set; }
 
         public virtual void ShowInfo()
         {
@@ -26,12 +26,12 @@ namespace ConsoleApp1
 
         public virtual void Attack(Person target)
         {
-            TakeDamage(target);
+            target.TakeDamage(Damage);
         }
 
-        private void TakeDamage(Person target)
+        public virtual void TakeDamage(int damage)
         {
-            target.Health -= Damage;
+            Health -= damage;
         }
     }
 }
