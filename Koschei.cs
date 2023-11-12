@@ -4,18 +4,18 @@ namespace ConsoleApp1
 {
     internal class Koschei : Person
     {
-        private readonly int _maxValueMana = 100;
+        private int _mana;
 
-        private int Mana { get; set; }
+        private readonly int _maxValueMana = 100;
 
         public Koschei(int health, int damage, string name) : base(health, damage, name)
         {
-            Mana = _maxValueMana;
+            _mana = _maxValueMana;
         }
 
         public override void ShowInfo()
         {
-            Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health} Mana - {Mana}");
+            Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health} Mana - {_mana}");
         }
 
         public override void Attack(Person target)
@@ -24,33 +24,27 @@ namespace ConsoleApp1
 
             int attackBooster = 3;
 
-            int saveValueDamage = Damage;
+            int defaultDamage = Damage;
 
-            if (Mana >= costManaSuperHit)
+            if (_mana >= costManaSuperHit)
             {
                 Damage *= attackBooster;
 
-                base.Attack(target);
-
-                Mana -= costManaSuperHit;
-
-                Damage = saveValueDamage;
-
-                FillMana();
+                _mana -= costManaSuperHit;
             }
-            else
-            {
-                base.Attack(target);
 
-                FillMana();
-            }
+            base.Attack(target);
+
+            Damage = defaultDamage;
+
+            FillMana();
         }
 
         private void FillMana()
         {
-            if (Mana < 100)
+            if (_mana < _maxValueMana)
             {
-                Mana++;
+                _mana++;
             }
         }
     }
