@@ -4,9 +4,12 @@ namespace ConsoleApp1
 {
     internal class Goblin : Person
     {
-        public Goblin(int health, int damage, string name,int armor) : base(health, damage, name) 
+        public Goblin() 
         {
-            Armor = armor;
+            Armor = 25;
+            Health = 100;
+            Damage = 10;
+            Name = "Леший";
         }
 
         private int Armor { get; set;}

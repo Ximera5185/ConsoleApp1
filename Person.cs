@@ -4,11 +4,6 @@ namespace ConsoleApp1
 {
     internal class Person
     {
-        protected Person()
-        {
-           
-        }
-
         public int Health { get; protected set; }
         protected int Damage { get; set; }
         protected string Name { get; set; }

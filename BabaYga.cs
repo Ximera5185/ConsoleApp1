@@ -5,7 +5,12 @@
         private int _maxValueSimpleAttacks = 2;
         private int _counterAttacks = 0;
 
-        public BabaYga(int health,int damage,string name) : base(health,damage,name) { }
+        public BabaYga()
+        {
+            Health = 100;
+            Damage = 10;
+            Name = "Баба-Яга";
+        }
 
         public override void Attack(Person target)
         {
