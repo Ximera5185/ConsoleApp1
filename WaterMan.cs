@@ -6,14 +6,17 @@ namespace ConsoleApp1
     {
         private int _maxValueHealth;
 
-        public WaterMan(int health, int damage, string name) : base(health, damage, name)
+        public WaterMan()
         {
-            _maxValueHealth = health;
+            Health = 100;
+            Damage = 10;
+            Name = "Водяной";
+
+            _maxValueHealth = Health;
         }
 
         public override void Attack(Person target)
         {
-
             base.Attack(target);
 
             if (Health < _maxValueHealth)

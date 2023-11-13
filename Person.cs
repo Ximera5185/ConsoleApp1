@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
     internal class Person
     {
-        protected Person(int health, int damage, string name)
+        protected Person()
         {
-            Health = health;
-            Damage = damage;
-            Name = name;
+           
         }
 
         public int Health { get; protected set; }
