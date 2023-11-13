@@ -6,14 +6,20 @@ namespace ConsoleApp1
     {
         static void Main(string [] args)
         {
-            Goblin goblin = new Goblin(100,10,"Гоблин");
-            WaterMan waterMan = new WaterMan(200, 10, "Водяной");
-            Koschei koschei = new Koschei(100,10,"Кащей");
+            Goblin goblin = new Goblin(100,10,"Гоблин",19);
+           
             Dragon dragon = new Dragon(100,10,"Змей-Горыныч");
 
-            goblin.Attack(dragon);
-           
+            goblin.ShowInfo();
 
+            dragon.Attack(goblin);
+
+            goblin.ShowInfo();
+
+            dragon.Attack(goblin);
+
+            goblin.ShowInfo();
+            
             Console.ReadKey();
 
             
