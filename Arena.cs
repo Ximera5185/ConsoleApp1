@@ -8,9 +8,22 @@ namespace ConsoleApp1
 {
     internal class Arena
     {
+        List<Person> fighters = new List<Person>();
+     
         public void StartArena() 
         {
-        
+          
+        }
+
+        private void CreateFighters() 
+        {
+            fighters.Add(new BabaYga());
+            
+        }
+
+        private void AddListFighters() 
+        {
+            
         }
     }
 }

@@ -5,11 +5,11 @@
         private int _maxValueSimpleAttacks = 2;
         private int _counterAttacks = 0;
 
-        public BabaYga()
+        public BabaYga():base(100,10, "Баба-Яга")
         {
-            Health = 100;
+    /*        Health = 100;
             Damage = 10;
-            Name = "Баба-Яга";
+            Name = "Баба-Яга";*/
         }
 
         public override void Attack(Person target)
