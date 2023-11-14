@@ -12,8 +12,8 @@ namespace ConsoleApp1
         }
 
         public int Health { get; protected set; }
-        protected int Damage { get; set; }
-        protected string Name { get; set; }
+        public int Damage { get; protected set; }
+        public string Name { get; protected set; }
 
         public virtual void ShowInfo()
         {

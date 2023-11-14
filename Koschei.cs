@@ -6,12 +6,9 @@ namespace ConsoleApp1
     {
         private readonly int _maxValueMana = 100;
 
-        public Koschei()
+        public Koschei() : base(100, 10, "Кащей-Бесмертный")
         {
             Mana = _maxValueMana;
-            Health = 100;
-            Damage = 10;
-            Name = "Кащей-Бесмертный";
         }
 
         private int Mana { get; set; }

@@ -4,15 +4,12 @@ namespace ConsoleApp1
 {
     internal class Goblin : Person
     {
-        public Goblin() 
+        public Goblin() : base(100, 10, "Леший")
         {
             Armor = 25;
-            Health = 100;
-            Damage = 10;
-            Name = "Леший";
         }
 
-        private int Armor { get; set;}
+        private int Armor { get; set; }
 
         public override void TakeDamage(int damage)
         {
@@ -28,7 +25,7 @@ namespace ConsoleApp1
             }
             else
             {
-                Armor -= remainingDamage; 
+                Armor -= remainingDamage;
             }
         }
 

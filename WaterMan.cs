@@ -6,12 +6,8 @@ namespace ConsoleApp1
     {
         private int _maxValueHealth;
 
-        public WaterMan()
+        public WaterMan() : base(100, 10, "Водяной")
         {
-            Health = 100;
-            Damage = 10;
-            Name = "Водяной";
-
             _maxValueHealth = Health;
         }
 

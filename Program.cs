@@ -6,7 +6,11 @@ namespace ConsoleApp1
     {
         static void Main(string [] args)
         {
-    Person person = new BabaYga();
+            Arena arena = new Arena();
+
+            arena.StartArena();
+
+            Console.ReadKey();
         }
     }
 }

@@ -4,12 +4,7 @@ namespace ConsoleApp1
 {
     internal class Dragon : Person
     {
-        public Dragon()
-        {
-            Health = 100;
-            Damage = 10;
-            Name = "Змей-Горыныч";
-        }
+        public Dragon() : base(100, 10, "Змей-Горыныч") { }
 
         public override void TakeDamage(int damage)
         {
