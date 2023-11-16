@@ -23,9 +23,9 @@ namespace ConsoleApp1
 
         private void SetValueHealth()
         {
-            int _valueHealthPower = 1;
+            int valueHealthPower = 1;
 
-            Health += _valueHealthPower;
+            Health += valueHealthPower;
         }
     }
 }

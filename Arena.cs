@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -103,7 +100,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"Игрок {figterOne.Name} победил");
             }
-            else if(fighterTwo.Health > minValueHealth)
+            else if (fighterTwo.Health > minValueHealth)
             {
                 Console.WriteLine($"Игрок {fighterTwo.Name} победил");
             }
