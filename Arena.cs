@@ -14,7 +14,7 @@ namespace ConsoleApp1
         {
             Person figterOne;
             Person fighterTwo;
-            
+
             int firstFighter;
             int secondFighter;
 
@@ -27,11 +27,15 @@ namespace ConsoleApp1
 
             figterOne = CreateFighters(firstFighter);
 
+            Console.Clear();
+
             secondFighter = SelectFighters(messageTwoSelect);
+
+            Console.Clear();
 
             fighterTwo = CreateFighters(secondFighter);
 
-            StartFight(figterOne,fighterTwo);
+            StartFight(figterOne, fighterTwo);
         }
 
         private Person CreateFighters(int numberFighter)
@@ -44,7 +48,6 @@ namespace ConsoleApp1
                 {
                     return _fighters [i];
                 }
-                
             }
 
             return null;
@@ -82,11 +85,28 @@ namespace ConsoleApp1
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        private Person StartFight(Person figterOne, Person fighterTwo) 
+        private void StartFight(Person figterOne, Person fighterTwo)
         {
-            Person vinner = null;
+            int minValueHealth = 0;
 
-            return vinner;
+            while (figterOne.Health > minValueHealth && fighterTwo.Health > minValueHealth)
+            {
+                figterOne.Attack(fighterTwo);
+
+                if (fighterTwo.Health > minValueHealth)
+                {
+                    fighterTwo.Attack(figterOne);
+                }
+            }
+
+            if (figterOne.Health > minValueHealth)
+            {
+                Console.WriteLine($"Игрок {figterOne.Name} победил");
+            }
+            else if(fighterTwo.Health > minValueHealth)
+            {
+                Console.WriteLine($"Игрок {fighterTwo.Name} победил");
+            }
         }
     }
 }

@@ -22,8 +22,6 @@ namespace ConsoleApp1
             else
             {
                 base.TakeDamage(damage);
-
-                Console.WriteLine("Змей горыныч получил урон");
             }
         }
     }

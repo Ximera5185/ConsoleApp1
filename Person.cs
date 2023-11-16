@@ -28,6 +28,8 @@ namespace ConsoleApp1
         public virtual void TakeDamage(int damage)
         {
             Health -= damage;
+
+            Console.WriteLine($"{Name} - получил урон в {damage} дамага. Жизней осталось {Health} XP");
         }
     }
 }
