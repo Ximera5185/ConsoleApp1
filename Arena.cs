@@ -36,6 +36,14 @@ namespace ConsoleApp1
 
             fighterTwo = CreateFighters(secondFighter);
 
+            if (figterOne == fighterTwo)
+            {
+                Console.WriteLine("Ссылки равны");
+            }
+            else
+            {
+                Console.WriteLine("Ссылки не равны");
+            }
             StartFight(figterOne, fighterTwo);
         }
 
