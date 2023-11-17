@@ -70,11 +70,31 @@ namespace ConsoleApp1
 
         private int SelectFighters(string messageSelect)
         {
+            int number = 0;
+
+            bool isNumber = false;
+
             Console.WriteLine(messageSelect);
 
             ShowListFighters();
 
-            return Convert.ToInt32(Console.ReadLine());
+            while (isNumber == false)
+            {
+                Console.WriteLine("Введите число");
+
+                string userInput = Console.ReadLine();
+
+                if (int.TryParse(userInput, out number))
+                {
+                    isNumber = true;
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка! Введите число.");
+                }
+            }
+
+            return number;
         }
 
         private void StartFight(Person figterOne, Person fighterTwo)
