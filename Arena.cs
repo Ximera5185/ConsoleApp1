@@ -7,6 +7,15 @@ namespace ConsoleApp1
     {
         private readonly List<Person> _fighters = new List<Person>();
 
+        public Arena() 
+        {
+            _fighters.Add(new BabaYga());
+            _fighters.Add(new Dragon());
+            _fighters.Add(new Goblin());
+            _fighters.Add(new Koschei());
+            _fighters.Add(new WaterMan());
+        }
+
         public void StartArena()
         {
             Person figterOne;
@@ -15,18 +24,13 @@ namespace ConsoleApp1
             int firstFighter;
             int secondFighter;
 
-            string messageOneSelect = "Выберите первого бойца";
-            string messageTwoSelect = "Выберите второго бойца";
-
-            AddFightersList();
-
-            firstFighter = SelectFighters(messageOneSelect);
+            firstFighter = SelectFighters("Выберите первого бойца");
 
             figterOne = CreateFighters(firstFighter);
 
             Console.Clear();
 
-            secondFighter = SelectFighters(messageTwoSelect);
+            secondFighter = SelectFighters("Выберите второго бойца");
 
             Console.Clear();
 
@@ -48,15 +52,6 @@ namespace ConsoleApp1
             }
 
             return null;
-        }
-
-        private void AddFightersList()
-        {
-            _fighters.Add(new BabaYga());
-            _fighters.Add(new Dragon());
-            _fighters.Add(new Goblin());
-            _fighters.Add(new Koschei());
-            _fighters.Add(new WaterMan());
         }
 
         private void ShowListFighters()
