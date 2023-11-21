@@ -21,9 +21,9 @@ namespace ConsoleApp1
             Person figterOne;
             Person fighterTwo;
 
-            figterOne = CreateFighters("Выберите первого бойца");
+            figterOne = CreateFighter("Выберите первого бойца");
 
-            fighterTwo = CreateFighters("Выберите второго бойца");
+            fighterTwo = CreateFighter("Выберите второго бойца");
 
             StartFight(figterOne, fighterTwo);
         }
@@ -44,7 +44,6 @@ namespace ConsoleApp1
 
         private void StartFight(Person figterOne, Person fighterTwo)
         {
-
             while (figterOne.Health > 0 && fighterTwo.Health > 0)
             {
                 figterOne.Attack(fighterTwo);
@@ -90,7 +89,7 @@ namespace ConsoleApp1
             return index = 0;
         }
 
-        private Person CreateFighters(string message)
+        private Person CreateFighter(string message)
         {
             Console.WriteLine(message);
 
