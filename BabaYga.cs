@@ -5,7 +5,13 @@
         private int _maxValueSimpleAttacks = 2;
         private int _counterAttacks = 0;
 
-        public BabaYga() : base(100, 10, "Баба-Яга") { }
+        public BabaYga() 
+        {
+            Name = "Баба - Яга";
+
+            Health = 100;
+            Damage = 10;
+        }
 
         public override void Attack(Person target)
         {
@@ -23,6 +29,11 @@
 
                 _counterAttacks = 0;
             }
+        }
+
+        public override Person Clone()
+        {
+            return new BabaYga();
         }
     }
 }

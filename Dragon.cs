@@ -4,7 +4,13 @@ namespace ConsoleApp1
 {
     internal class Dragon : Person
     {
-        public Dragon() : base(100, 10, "Змей-Горыныч") { }
+        public Dragon() 
+        {
+            Name = "Змей - Горыныч";
+
+            Health = 100;
+            Damage = 10;
+        }
 
         public override void TakeDamage(int damage)
         {
@@ -23,6 +29,11 @@ namespace ConsoleApp1
             {
                 base.TakeDamage(damage);
             }
+        }
+
+        public override Person Clone()
+        {
+            return new Dragon();
         }
     }
 }

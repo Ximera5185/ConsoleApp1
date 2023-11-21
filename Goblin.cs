@@ -4,8 +4,12 @@ namespace ConsoleApp1
 {
     internal class Goblin : Person
     {
-        public Goblin() : base(100, 10, "Леший")
+        public Goblin()
         {
+            Name = "Леший";
+
+            Health = 100;
+            Damage = 10;
             Armor = 25;
         }
 
@@ -32,6 +36,11 @@ namespace ConsoleApp1
         public override void ShowInfo()
         {
             Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health} Armor - {Armor}");
+        }
+
+        public override Person Clone()
+        {
+            return new Goblin();
         }
     }
 }

@@ -2,15 +2,8 @@
 
 namespace ConsoleApp1
 {
-    abstract class Person
+    internal class Person
     {
-        public Person(int health,int damage,string name) 
-        {
-            Health = health;    
-            Damage = damage;
-            Name = name;
-        }
-
         public int Health { get; protected set; }
         public int Damage { get; protected set; }
         public string Name { get; protected set; }
@@ -30,6 +23,11 @@ namespace ConsoleApp1
             Health -= damage;
 
             Console.WriteLine($"{Name} - получил урон в {damage} дамага. Жизней осталось {Health} XP");
+        }
+
+        public virtual Person Clone()
+        {
+            return new Person();
         }
     }
 }

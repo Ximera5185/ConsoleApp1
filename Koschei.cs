@@ -6,9 +6,15 @@ namespace ConsoleApp1
     {
         private readonly int _maxValueMana = 100;
         private int _mana;
-        public Koschei() : base(100, 10, "Кащей-Бесмертный")
+
+        public Koschei()
         {
+            Name = "Кащей бесмертный";
+
             _mana = _maxValueMana;
+            Health = 100;
+            Damage = 10;
+            
         }
 
         public override void ShowInfo()
@@ -36,6 +42,11 @@ namespace ConsoleApp1
             Damage = defaultDamage;
 
             FillMana();
+        }
+
+        public override Person Clone()
+        {
+            return new Koschei();
         }
 
         private void FillMana()

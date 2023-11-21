@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         private readonly List<Person> _fighters = new List<Person>();
 
-        public Arena() 
+        public Arena()
         {
             _fighters.Add(new BabaYga());
             _fighters.Add(new Dragon());
@@ -21,45 +21,11 @@ namespace ConsoleApp1
             Person figterOne;
             Person fighterTwo;
 
-            int firstFighter;
-            int secondFighter;
+            figterOne = CreateFighters("Выберите первого бойца");
 
-            firstFighter = SelectFighters("Выберите первого бойца");
+            fighterTwo = CreateFighters("Выберите второго бойца");
 
-            figterOne = CreateFighters(firstFighter);
-
-            Console.Clear();
-
-            secondFighter = SelectFighters("Выберите второго бойца");
-
-            Console.Clear();
-
-            fighterTwo = CreateFighters(secondFighter);
-
-            if (figterOne == fighterTwo)
-            {
-                Console.WriteLine("Ссылки равны");
-            }
-            else
-            {
-                Console.WriteLine("Ссылки не равны");
-            }
             StartFight(figterOne, fighterTwo);
-        }
-
-        private Person CreateFighters(int numberFighter)
-        {
-            numberFighter--;
-
-            for (int i = 0; i < _fighters.Count; i++)
-            {
-                if (i == numberFighter)
-                {
-                    return _fighters [i];
-                }
-            }
-
-            return null;
         }
 
         private void ShowListFighters()
@@ -74,35 +40,6 @@ namespace ConsoleApp1
 
                 serialNumber++;
             }
-        }
-
-        private int SelectFighters(string messageSelect)
-        {
-            int number = 0;
-
-            bool isNumber = false;
-
-            Console.WriteLine(messageSelect);
-
-            ShowListFighters();
-
-            while (isNumber == false)
-            {
-                Console.WriteLine("Введите число");
-
-                string userInput = Console.ReadLine();
-
-                if (int.TryParse(userInput, out number))
-                {
-                    isNumber = true;
-                }
-                else
-                {
-                    Console.WriteLine("Ошибка! Введите число.");
-                }
-            }
-
-            return number;
         }
 
         private void StartFight(Person figterOne, Person fighterTwo)
@@ -127,6 +64,45 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"Игрок {fighterTwo.Name} победил");
             }
+        }
+
+        private Person CreateFighters(string message)
+        {
+            int numberFighter = 0;
+
+            bool isNumber = false;
+
+            Console.WriteLine(message);
+
+            ShowListFighters();
+
+            while (isNumber == false)
+            {
+                Console.WriteLine("Введите число");
+
+                string userInput = Console.ReadLine();
+
+                if (int.TryParse(userInput, out numberFighter))
+                {
+                    isNumber = true;
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка! Введите число.");
+                }
+            }
+
+            Console.Clear();
+
+            for (int i = 0; i < _fighters.Count; i++)
+            {
+                if (i == numberFighter)
+                {
+                    return _fighters [i - 1].Clone();
+                }
+            }
+
+            return null;
         }
     }
 }

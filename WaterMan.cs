@@ -6,9 +6,13 @@ namespace ConsoleApp1
     {
         private int _maxValueHealth;
 
-        public WaterMan() : base(100, 10, "Водяной")
+        public WaterMan()
         {
+            Name = "Водяной";
+
             _maxValueHealth = Health;
+            Health = 100;
+            Damage = 10;
         }
 
         public override void Attack(Person target)
@@ -19,6 +23,11 @@ namespace ConsoleApp1
             {
                 SetValueHealth();
             }
+        }
+
+        public override Person Clone()
+        {
+            return new WaterMan();
         }
 
         private void SetValueHealth()
