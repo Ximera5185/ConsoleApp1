@@ -66,15 +66,9 @@ namespace ConsoleApp1
             }
         }
 
-        private Person CreateFighters(string message)
+        private int CheckInputSymbol(int index)
         {
-            int numberFighter = 0;
-
             bool isNumber = false;
-
-            Console.WriteLine(message);
-
-            ShowListFighters();
 
             while (isNumber == false)
             {
@@ -82,9 +76,11 @@ namespace ConsoleApp1
 
                 string userInput = Console.ReadLine();
 
-                if (int.TryParse(userInput, out numberFighter))
+                if (int.TryParse(userInput, out index))
                 {
                     isNumber = true;
+
+                    return index;
                 }
                 else
                 {
@@ -92,13 +88,34 @@ namespace ConsoleApp1
                 }
             }
 
+            return index = 0;
+        }
+
+        private Person CreateFighters(string message)
+        {
+            Console.WriteLine(message);
+
             Console.Clear();
 
-            for (int i = 0; i < _fighters.Count; i++)
+            bool isExistingIndex = false;
+
+            while (isExistingIndex == false)
             {
-                if (i == numberFighter)
+                int index = 0;
+
+                ShowListFighters();
+
+                index = CheckInputSymbol(index);
+
+                if (index > 0 && index < _fighters.Count + 1)
                 {
-                    return _fighters [i - 1].Clone();
+                    isExistingIndex = true;
+
+                    return _fighters [index - 1].Clone();
+                }
+                else
+                {
+                    Console.WriteLine("Бойца под таким номером нет");
                 }
             }
 
