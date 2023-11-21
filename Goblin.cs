@@ -4,55 +4,35 @@ namespace ConsoleApp1
 {
     internal class Goblin : Person
     {
+        private int _armor;
+
         public Goblin()
         {
             Name = "Леший";
 
             Health = 100;
             Damage = 10;
-            Armor = 25;
+            _armor = 25;
         }
-
-        private int Armor { get; set; }
-
-        /*public override void TakeDamage(int damage)
-        {
-            int remainingDamage = damage;
-
-            if (Armor < remainingDamage)
-            {
-                remainingDamage -= Armor;
-
-                Armor -= Armor;
-
-                base.TakeDamage(remainingDamage);
-            }
-            else
-            {
-                Armor -= remainingDamage;
-            }
-        }*/
 
         public override void TakeDamage(int damage)
         {
-            
-
-            if (Armor < damage)
+            if (_armor < damage)
             {
-                damage -= Armor;
+                damage -= _armor;
 
-                Armor -= Armor;
+                _armor -= _armor;
 
                 base.TakeDamage(damage);
             }
             else
             {
-                Armor -= damage;
+                _armor -= damage;
             }
         }
         public override void ShowInfo()
         {
-            Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health} Armor - {Armor}");
+            Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health} Armor - {_armor}");
         }
 
         public override Person Clone()
