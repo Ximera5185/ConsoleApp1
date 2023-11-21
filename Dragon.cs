@@ -18,8 +18,9 @@ namespace ConsoleApp1
 
             int minValue = 1;
             int maxValue = 101;
+            int potentialSuperpower = 30;
 
-            bool isRetreatAttack = random.Next(minValue, maxValue) <= 30;
+            bool isRetreatAttack = random.Next(minValue, maxValue) <= potentialSuperpower;
 
             if (isRetreatAttack)
             {

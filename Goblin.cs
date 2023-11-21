@@ -15,7 +15,7 @@ namespace ConsoleApp1
 
         private int Armor { get; set; }
 
-        public override void TakeDamage(int damage)
+        /*public override void TakeDamage(int damage)
         {
             int remainingDamage = damage;
 
@@ -31,8 +31,25 @@ namespace ConsoleApp1
             {
                 Armor -= remainingDamage;
             }
-        }
+        }*/
 
+        public override void TakeDamage(int damage)
+        {
+            
+
+            if (Armor < damage)
+            {
+                damage -= Armor;
+
+                Armor -= Armor;
+
+                base.TakeDamage(damage);
+            }
+            else
+            {
+                Armor -= damage;
+            }
+        }
         public override void ShowInfo()
         {
             Console.WriteLine($"Name - {Name} Damage - {Damage} Health - {Health} Armor - {Armor}");

@@ -44,23 +44,22 @@ namespace ConsoleApp1
 
         private void StartFight(Person figterOne, Person fighterTwo)
         {
-            int minValueHealth = 0;
 
-            while (figterOne.Health > minValueHealth && fighterTwo.Health > minValueHealth)
+            while (figterOne.Health > 0 && fighterTwo.Health > 0)
             {
                 figterOne.Attack(fighterTwo);
 
-                if (fighterTwo.Health > minValueHealth)
+                if (fighterTwo.Health > 0)
                 {
                     fighterTwo.Attack(figterOne);
                 }
             }
 
-            if (figterOne.Health > minValueHealth)
+            if (figterOne.Health > 0)
             {
                 Console.WriteLine($"Игрок {figterOne.Name} победил");
             }
-            else if (fighterTwo.Health > minValueHealth)
+            else if (fighterTwo.Health > 0)
             {
                 Console.WriteLine($"Игрок {fighterTwo.Name} победил");
             }
